@@ -1,6 +1,6 @@
 ﻿namespace BibliotecaAPP
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -122,6 +122,7 @@
             this.btn_acceder.TabIndex = 3;
             this.btn_acceder.Text = "Acceder";
             this.btn_acceder.UseVisualStyleBackColor = false;
+            this.btn_acceder.Click += new System.EventHandler(this.btn_acceder_Click);
             // 
             // linkLabel1
             // 
