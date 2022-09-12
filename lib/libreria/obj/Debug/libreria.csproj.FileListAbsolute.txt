@@ -1,0 +1,14 @@
+C:\Users\carli\Desktop\libreria\libreria\bin\Debug\libreria.exe.config
+C:\Users\carli\Desktop\libreria\libreria\bin\Debug\libreria.exe
+C:\Users\carli\Desktop\libreria\libreria\bin\Debug\libreria.pdb
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.csproj.AssemblyReference.cache
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.csproj.SuggestedBindingRedirects.cache
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.Properties.Resources.resources
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.csproj.GenerateResource.cache
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.csproj.CoreCompileInputs.cache
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.exe
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.pdb
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.menuPrestamo.resources
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.MenuLateral.resources
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.menuDevolver.resources
+C:\Users\carli\Desktop\libreria\libreria\obj\Debug\libreria.menuHistorial.resources
