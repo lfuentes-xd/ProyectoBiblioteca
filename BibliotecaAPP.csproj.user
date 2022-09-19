@@ -4,5 +4,17 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="menuDevolver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="menuHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="menuLateral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="menuPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

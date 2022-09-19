@@ -47,3 +47,7 @@ C:\Users\lfuen\source\repos\BibliotecaAPP\bin\Debug\net6.0-windows\runtimes\win\
 C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\BibliotecaAPP.Login.resources
 C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\BibliotecaAPP.csproj.CopyComplete
 C:\Users\lfuen\source\repos\BibliotecaAPP\bin\Debug\net6.0-windows\BibliotecaAPP.dll.config
+C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\libreria.menuDevolver.resources
+C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\libreria.menuHistorial.resources
+C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\libreria.MenuLateral.resources
+C:\Users\lfuen\source\repos\BibliotecaAPP\obj\Debug\net6.0-windows\libreria.menuPrestamo.resources
