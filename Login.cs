@@ -40,23 +40,23 @@ namespace BibliotecaAPP
             }
         }
 
-        private void txtcontraseña_Leave(object sender, EventArgs e)
+        private void txtcontraseÃ±a_Leave(object sender, EventArgs e)
         {
-            if (txtcontraseña.Text == "")
+            if (txtcontraseÃ±a.Text == "")
             {
-                txtcontraseña.Text = "Contraseña";
-                txtcontraseña.ForeColor = Color.DimGray;
-                txtcontraseña.UseSystemPasswordChar = false;
+                txtcontraseÃ±a.Text = "Contraseï¿½a";
+                txtcontraseÃ±a.ForeColor = Color.DimGray;
+                txtcontraseÃ±a.UseSystemPasswordChar = false;
             }
         }
 
-        private void txtcontraseña_Enter(object sender, EventArgs e)
+        private void txtcontraseÃ±a_Enter(object sender, EventArgs e)
         {
-            if (txtcontraseña.Text == "Contraseña")
+            if (txtcontraseÃ±a.Text == "Contraseï¿½a")
             {
-                txtcontraseña.Text = " ";
-                txtcontraseña.ForeColor = Color.LightGray;
-                txtcontraseña.UseSystemPasswordChar = true;
+                txtcontraseÃ±a.Text = " ";
+                txtcontraseÃ±a.ForeColor = Color.LightGray;
+                txtcontraseÃ±a.UseSystemPasswordChar = true;
             }
         }
 
@@ -96,7 +96,7 @@ namespace BibliotecaAPP
         {
             if (txtUsuario.Text!="Usuario")
             {
-                if (txtcontraseña.Text!="Contraseña")
+                if (txtcontraseÃ±a.Text!="ContraseÃ±a")
                 { 
                     
                     try
@@ -107,9 +107,9 @@ namespace BibliotecaAPP
                         //using (SqlConnection con = new SqlConnection(cnn))
 
                         //MessageBox.Show("administrador "+txtUsuario.Text);
-                        //MessageBox.Show("contra "+txtcontraseña); 
+                        //MessageBox.Show("contra "+txtcontraseÃ±a); 
                         {
-                            using (SqlCommand cmd = new SqlCommand("SELECT loginName, password from usuarios where loginName='"+txtUsuario.Text+"'AND password='" + txtcontraseña.Text + "'", con))
+                            using (SqlCommand cmd = new SqlCommand("SELECT Usuario, ContraseÃ±a from Usuarios where Usuario='"+txtUsuario.Text+"'AND ContraseÃ±a='" + txtcontraseÃ±a.Text + "'", con))
                             {
                                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -136,8 +136,8 @@ namespace BibliotecaAPP
                 }
                 else
                 {
-                    MessageBox.Show("la contraseña debe ser diferente a" +
-                    "\n Contraseña");
+                    MessageBox.Show("la contraseÃ±a debe ser diferente a" +
+                    "\n Contraseï¿½a");
                 }
             }
             else

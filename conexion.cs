@@ -11,7 +11,7 @@ namespace sqlserver
     public  class conexion
     {
 
-        string cadena  = "Data Source=DESKTOP-OTBPRV3;Initial Catalog=Login;Integrated Security=True";
+        string cadena  = "Data Source=LAPTOP-KLM21BFT;Initial Catalog=biblioteca;Integrated Security=True";
 
         public SqlConnection conectarBD = new SqlConnection();
         private SqlCommandBuilder comandbuild; 
