@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carli\\Desktop\\biblioteca\\Biblioteca\\Biblioteca\\BibliotecaAPP.csproj": {}
+    "C:\\Users\\emman\\OneDrive\\Escritorio\\MERGE\\Biblioteca\\BibliotecaAPP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carli\\Desktop\\biblioteca\\Biblioteca\\Biblioteca\\BibliotecaAPP.csproj": {
+    "C:\\Users\\emman\\OneDrive\\Escritorio\\MERGE\\Biblioteca\\BibliotecaAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carli\\Desktop\\biblioteca\\Biblioteca\\Biblioteca\\BibliotecaAPP.csproj",
+        "projectUniqueName": "C:\\Users\\emman\\OneDrive\\Escritorio\\MERGE\\Biblioteca\\BibliotecaAPP.csproj",
         "projectName": "BibliotecaAPP",
-        "projectPath": "C:\\Users\\carli\\Desktop\\biblioteca\\Biblioteca\\Biblioteca\\BibliotecaAPP.csproj",
-        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carli\\Desktop\\biblioteca\\Biblioteca\\Biblioteca\\obj\\",
+        "projectPath": "C:\\Users\\emman\\OneDrive\\Escritorio\\MERGE\\Biblioteca\\BibliotecaAPP.csproj",
+        "packagesPath": "C:\\Users\\emman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emman\\OneDrive\\Escritorio\\MERGE\\Biblioteca\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\emman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -59,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -71,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
