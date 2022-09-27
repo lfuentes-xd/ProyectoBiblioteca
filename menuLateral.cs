@@ -96,5 +96,17 @@ namespace libreria
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(panel2.Visible == false)
+            {
+                panel2.Visible = true;
+            }
+            else
+            {
+                panel2.Visible = false;
+            }
+        }
     }
 }

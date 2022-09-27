@@ -59,6 +59,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.x = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -302,6 +303,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(48)))), ((int)(((byte)(80)))));
+            this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.button8);
@@ -482,6 +484,15 @@
             this.x.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.x.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(0, 13);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 48;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // menuPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -553,5 +564,6 @@
         private Button button8;
         private Button button9;
         private Label label6;
+        private Button button10;
     }
 }

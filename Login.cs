@@ -101,13 +101,9 @@ namespace BibliotecaAPP
                     
                     try
                     {
-                        //string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
+                        
                          SqlConnection con = cn.conectarBD;
                          con.Open();
-                        //using (SqlConnection con = new SqlConnection(cnn))
-
-                        //MessageBox.Show("administrador "+txtUsuario.Text);
-                        //MessageBox.Show("contra "+txtcontraseña); 
                         {
                             using (SqlCommand cmd = new SqlCommand("SELECT loginName, password from usuarios where loginName='"+txtUsuario.Text+"'AND password='" + txtcontraseña.Text + "'", con))
                             {
@@ -116,6 +112,9 @@ namespace BibliotecaAPP
                                 if (dr.Read())
                                 {
                                     MessageBox.Show("exitoso");
+                                    libreria.MenuLateral mn = new libreria.MenuLateral();
+                                    mn.Show();
+                                    this.Hide();
                                 }
                                 else
                                 {
@@ -145,6 +144,11 @@ namespace BibliotecaAPP
                 MessageBox.Show("El usuario debe ser diferente a" +
                     "\n Usuario"); 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
