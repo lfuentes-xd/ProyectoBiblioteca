@@ -44,11 +44,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonPres = new System.Windows.Forms.Button();
             this.buttonDev = new System.Windows.Forms.Button();
             this.buttonHis = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -59,7 +59,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.x = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -229,7 +228,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(85)))), ((int)(((byte)(89)))));
-            this.flowLayoutPanel1.Controls.Add(this.buttonPres);
             this.flowLayoutPanel1.Controls.Add(this.buttonDev);
             this.flowLayoutPanel1.Controls.Add(this.buttonHis);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 105);
@@ -237,24 +235,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(223, 332);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // buttonPres
-            // 
-            this.buttonPres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPres.FlatAppearance.BorderSize = 0;
-            this.buttonPres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.buttonPres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPres.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonPres.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonPres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPres.Location = new System.Drawing.Point(4, 3);
-            this.buttonPres.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPres.Name = "buttonPres";
-            this.buttonPres.Size = new System.Drawing.Size(219, 54);
-            this.buttonPres.TabIndex = 0;
-            this.buttonPres.Text = "Prestamo";
-            this.buttonPres.UseVisualStyleBackColor = true;
             // 
             // buttonDev
             // 
@@ -264,13 +244,14 @@
             this.buttonDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDev.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonDev.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonDev.Location = new System.Drawing.Point(4, 63);
+            this.buttonDev.Location = new System.Drawing.Point(4, 3);
             this.buttonDev.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonDev.Name = "buttonDev";
             this.buttonDev.Size = new System.Drawing.Size(219, 54);
             this.buttonDev.TabIndex = 1;
             this.buttonDev.Text = "Devolver";
             this.buttonDev.UseVisualStyleBackColor = true;
+            this.buttonDev.Click += new System.EventHandler(this.buttonDev_Click);
             // 
             // buttonHis
             // 
@@ -280,13 +261,14 @@
             this.buttonHis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHis.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonHis.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonHis.Location = new System.Drawing.Point(4, 123);
+            this.buttonHis.Location = new System.Drawing.Point(4, 63);
             this.buttonHis.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonHis.Name = "buttonHis";
             this.buttonHis.Size = new System.Drawing.Size(219, 54);
             this.buttonHis.TabIndex = 2;
             this.buttonHis.Text = "Historial";
             this.buttonHis.UseVisualStyleBackColor = true;
+            this.buttonHis.Click += new System.EventHandler(this.buttonHis_Click);
             // 
             // pictureBox1
             // 
@@ -302,6 +284,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(48)))), ((int)(((byte)(80)))));
             this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.label6);
@@ -314,11 +297,22 @@
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.x);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(233, 10);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(623, 57);
             this.panel4.TabIndex = 40;
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Location = new System.Drawing.Point(7, 11);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(39, 32);
+            this.button10.TabIndex = 48;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label6
             // 
@@ -381,6 +375,7 @@
             this.button9.TabIndex = 44;
             this.button9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button4
             // 
@@ -484,15 +479,6 @@
             this.x.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.x.UseVisualStyleBackColor = true;
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(0, 13);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 48;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // menuPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -549,7 +535,6 @@
         private System.Windows.Forms.Button button2;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button buttonPres;
         private Button buttonDev;
         private Button buttonHis;
         private PictureBox pictureBox1;

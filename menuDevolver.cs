@@ -14,7 +14,9 @@ namespace libreria
     {
         public menuDevolver()
         {
+            
             InitializeComponent();
+            panel2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,6 +43,42 @@ namespace libreria
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             val=false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (panel2.Visible == false)
+            {
+                panel2.Visible = true;
+            }
+            else
+            {
+                panel2.Visible = false;
+            }
+        }
+
+        private void buttonPres_Click(object sender, EventArgs e)
+        {
+            menuPrestamo menuPrestamo = new menuPrestamo();
+            menuPrestamo.Show();
+            this.Hide();
+        }
+
+        private void buttonHis_Click(object sender, EventArgs e)
+        {
+            menuHistorial menuhistorial = new menuHistorial();
+            menuhistorial.Show();
+            this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

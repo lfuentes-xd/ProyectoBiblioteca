@@ -108,5 +108,10 @@ namespace libreria
                 panel2.Visible = false;
             }
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

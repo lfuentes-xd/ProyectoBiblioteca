@@ -40,16 +40,16 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonPres = new System.Windows.Forms.Button();
             this.buttonDev = new System.Windows.Forms.Button();
-            this.buttonHis = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.x = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.x = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -156,7 +156,6 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(85)))), ((int)(((byte)(89)))));
             this.flowLayoutPanel1.Controls.Add(this.buttonPres);
             this.flowLayoutPanel1.Controls.Add(this.buttonDev);
-            this.flowLayoutPanel1.Controls.Add(this.buttonHis);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 105);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -180,6 +179,7 @@
             this.buttonPres.TabIndex = 0;
             this.buttonPres.Text = "Prestamo";
             this.buttonPres.UseVisualStyleBackColor = true;
+            this.buttonPres.Click += new System.EventHandler(this.buttonPres_Click);
             // 
             // buttonDev
             // 
@@ -196,22 +196,7 @@
             this.buttonDev.TabIndex = 1;
             this.buttonDev.Text = "Devolver";
             this.buttonDev.UseVisualStyleBackColor = true;
-            // 
-            // buttonHis
-            // 
-            this.buttonHis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonHis.FlatAppearance.BorderSize = 0;
-            this.buttonHis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.buttonHis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHis.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonHis.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonHis.Location = new System.Drawing.Point(4, 123);
-            this.buttonHis.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonHis.Name = "buttonHis";
-            this.buttonHis.Size = new System.Drawing.Size(219, 54);
-            this.buttonHis.TabIndex = 2;
-            this.buttonHis.Text = "Historial";
-            this.buttonHis.UseVisualStyleBackColor = true;
+            this.buttonDev.Click += new System.EventHandler(this.buttonDev_Click);
             // 
             // pictureBox1
             // 
@@ -228,6 +213,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button5);
@@ -240,6 +226,81 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(623, 57);
             this.panel4.TabIndex = 39;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Location = new System.Drawing.Point(7, 13);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(39, 32);
+            this.button7.TabIndex = 49;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(268, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 25);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Historial";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackgroundImage = global::BibliotecaAPP.Properties.Resources.minimize;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button4.Location = new System.Drawing.Point(531, 17);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(21, 21);
+            this.button4.TabIndex = 6;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackgroundImage = global::BibliotecaAPP.Properties.Resources.windowShift;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button5.Location = new System.Drawing.Point(560, 17);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(21, 21);
+            this.button5.TabIndex = 5;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackgroundImage = global::BibliotecaAPP.Properties.Resources.close;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button6.Location = new System.Drawing.Point(589, 17);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(21, 21);
+            this.button6.TabIndex = 4;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -292,68 +353,6 @@
             this.x.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.x.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackgroundImage = global::BibliotecaAPP.Properties.Resources.minimize;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button4.Location = new System.Drawing.Point(531, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(21, 21);
-            this.button4.TabIndex = 6;
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackgroundImage = global::BibliotecaAPP.Properties.Resources.windowShift;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.Location = new System.Drawing.Point(560, 17);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(21, 21);
-            this.button5.TabIndex = 5;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackgroundImage = global::BibliotecaAPP.Properties.Resources.close;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.Location = new System.Drawing.Point(589, 17);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 21);
-            this.button6.TabIndex = 4;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(268, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 25);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Historial";
-            // 
             // menuHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -382,7 +381,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,7 +399,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button buttonPres;
         private Button buttonDev;
-        private Button buttonHis;
         private PictureBox pictureBox1;
         private Panel panel4;
         private Button button3;
@@ -411,5 +408,6 @@
         private Button button5;
         private Button button6;
         private Label label6;
+        private Button button7;
     }
 }
