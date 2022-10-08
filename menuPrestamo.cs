@@ -96,5 +96,17 @@ namespace libreria
         {
             Application.Exit();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MenuLateral menuLateral = new MenuLateral();
+            menuLateral.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
