@@ -115,6 +115,7 @@ namespace BibliotecaAPP
                                     libreria.MenuLateral mn = new libreria.MenuLateral();
                                     mn.Show();
                                     this.Hide();
+                                    con.Close();
                                 }
                                 else
                                 {
@@ -135,8 +136,8 @@ namespace BibliotecaAPP
                 }
                 else
                 {
-                    MessageBox.Show("la contrase�a debe ser diferente a" +
-                    "\n Contrase�a");
+                    MessageBox.Show("la contraseña debe ser diferente a" +
+                    "\n Contraseña");
                 }
             }
             else
