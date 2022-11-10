@@ -26,7 +26,7 @@ namespace libreria
             dataGridView1.DataSource = CargarDatos();
             CM = (CurrencyManager)dataGridView1.BindingContext[libros]; 
         }
-
+        //para llenar la tabla de los datos 
         private List<Claselibro> CargarDatos(string query = "")
         {
             string sql = (query == "")
@@ -47,6 +47,7 @@ namespace libreria
                     {
                         
                         isbn = int.Parse(lector[0].ToString()),
+                        fechpublic = lector[1].ToString(), 
                         npaginas = int.Parse(lector[2].ToString()),
                         nomlibro = lector[3].ToString(),
                         ideditorial = lector[4].ToString(), 
@@ -218,6 +219,36 @@ namespace libreria
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        //boton para buscar 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            
+            
+
+            if (textBox1.Text == " ")
+            {
+                string sql = $"SELECT * FROM libro ";
+
+                libros.Clear();
+                dataGridView1.DataSource = CargarDatos(sql);
+                CM.Refresh();
+            }
+            else
+            {
+                string busca = textBox1.Text;
+
+                string sql = $"SELECT * FROM libro Where" +
+                $"(isbn LIKE '%{busca}%')";
+
+                libros.Clear();
+                dataGridView1.DataSource = CargarDatos(sql);
+                CM.Refresh();
+            }
+
+            
         }
     }
 }
