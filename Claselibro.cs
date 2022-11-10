@@ -8,11 +8,10 @@ namespace libreria
 {
     public class Claselibro
     {
-        public int? isbn { get; set; }
-        public string? fechpublic { get; set; }
-        public int? npaginas { get; set; }
-        public string? nomlibro { get; set;  }
-        public string? ideditorial { get; set; }
-        public string? idpais { get; set;  }
+        public long? isbn { get; set; }
+        public string? Titulo{ get; set; }
+        public string? autor { get; set; }
+        public string? genero { get; set;  }
+        public int? noeditorial { get; set; }
     }
 }

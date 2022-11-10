@@ -30,7 +30,7 @@ namespace libreria
         private List<Claselibro> CargarDatos(string query = "")
         {
             string sql = (query == "")
-                ? "SELECT * FROM libro"
+                ? "SELECT * FROM libros"
                 : query;
             SqlConnection connection = con.ObtenerConexion(); 
             connection.Open();
@@ -45,13 +45,12 @@ namespace libreria
                 {
                     Claselibro cl = new Claselibro()
                     {
-                        
-                        isbn = int.Parse(lector[0].ToString()),
-                        fechpublic = lector[1].ToString(), 
-                        npaginas = int.Parse(lector[2].ToString()),
-                        nomlibro = lector[3].ToString(),
-                        ideditorial = lector[4].ToString(), 
-                        idpais = lector[5].ToString()
+
+                        isbn = Int64.Parse(lector[0].ToString()),
+                        Titulo = lector[1].ToString(),
+                        autor = lector[2].ToString(),
+                        genero = lector[3].ToString(), 
+                        noeditorial = int.Parse(lector[4].ToString())
                     };
                     libros.Add(cl);
                 }
@@ -224,13 +223,9 @@ namespace libreria
         //boton para buscar 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            
-            
-
             if (textBox1.Text == " ")
             {
-                string sql = $"SELECT * FROM libro ";
+                string sql = $"SELECT * FROM libros ";
 
                 libros.Clear();
                 dataGridView1.DataSource = CargarDatos(sql);
@@ -240,8 +235,8 @@ namespace libreria
             {
                 string busca = textBox1.Text;
 
-                string sql = $"SELECT * FROM libro Where" +
-                $"(isbn LIKE '%{busca}%')";
+                string sql = $"SELECT * FROM libros Where" +
+                $"(Titulo LIKE '%{busca}%')";
 
                 libros.Clear();
                 dataGridView1.DataSource = CargarDatos(sql);
