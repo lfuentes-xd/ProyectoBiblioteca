@@ -22,7 +22,7 @@ namespace libreria
         public MenuLateral()
         {
             InitializeComponent();
-            panel2.Visible = false;
+            panel2.Visible = true;
             dataGridView1.DataSource = CargarDatos();
             CM = (CurrencyManager)dataGridView1.BindingContext[libros]; 
         }
