@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +14,57 @@ namespace libreria
 {
     public partial class menuHistorial : Form
     {
+        SqlDB con = new SqlDB();
+        private CurrencyManager CM;
+        List<Prestamo> prestamos = new List<Prestamo>();
+
         public menuHistorial()
         {
             InitializeComponent();
             panel2.Visible = false;
+            dataGridView1.DataSource = CargarDatos();
+            CM = (CurrencyManager)dataGridView1.BindingContext[prestamos];
+        }
+
+        private List<Prestamo> CargarDatos(string query = "")
+        {
+            string sql = (query == "")
+                ? "SELECT * FROM Prestamo ORDER BY FechaEntrega DESC"
+                : query;
+            SqlConnection connection = con.ObtenerConexion();
+            connection.Open();
+            try
+            {
+                //para ejecutar consultas
+                SqlCommand sqlcom = new SqlCommand(sql, connection);
+                //para leer la tabla 
+                SqlDataReader lector = sqlcom.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Prestamo cl = new Prestamo()
+                    {
+                        noPrestamo = int.Parse(lector[0].ToString()),
+                        noLector = int.Parse(lector[1].ToString()),
+                        isbn = long.Parse(lector[2].ToString()),
+                        Fecha = lector[3].ToString()
+                    };
+                    prestamos.Add(cl);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(
+                "Error inesperado" + e.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return prestamos;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -89,6 +138,50 @@ namespace libreria
         private void button4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsultarHistorial();
+            
+        }
+
+        private void ConsultarHistorial()
+        {
+            if (textBox1.Text.IsNullOrEmpty() && textBox2.Text.IsNullOrEmpty()) {
+                string sql = $"SELECT * FROM Prestamo ORDER BY FechaEntrega DESC";
+
+                prestamos.Clear();
+                dataGridView1.DataSource = CargarDatos(sql);
+                CM.Refresh();
+            }
+            else
+            {
+                if (textBox1.Text.IsNullOrEmpty())
+                {
+                    string busca = textBox2.Text;
+
+                    string sql = $"SELECT * FROM Prestamo Where" +
+                    $"(ISBN LIKE '%{busca}%') ORDER BY FechaEntrega DESC";
+
+                    prestamos.Clear();
+                    dataGridView1.DataSource = CargarDatos(sql);
+                    CM.Refresh();
+                }
+                else {
+                    string busca = textBox1.Text;
+
+                    string sql = $"SELECT * FROM Prestamo Where" +
+                    $"(NoLector LIKE '%{busca}%') ORDER BY FechaEntrega DESC";
+
+                    prestamos.Clear();
+                    dataGridView1.DataSource = CargarDatos(sql);
+                    CM.Refresh();
+                }
+
+                
+            } 
+            
         }
     }
 }

@@ -13,7 +13,7 @@ namespace libreria
 
         public SqlConnection ObtenerConexion()
         {
-            string cadena = "Data Source=DESKTOP-OTBPRV3;Initial Catalog=login;Integrated Security=True";
+            string cadena = "Data Source=DESKTOP-TPCERJP\\SQLEXPRESS;Initial Catalog=Biblioteca;Integrated Security=True";
             try
             {
                 SqlConnection connectionbd = new SqlConnection(cadena);

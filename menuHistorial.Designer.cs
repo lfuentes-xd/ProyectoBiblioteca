@@ -66,9 +66,9 @@
             this.label2.Location = new System.Drawing.Point(262, 130);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "ISBN";
             // 
             // label1
             // 
@@ -99,7 +99,7 @@
             this.textBox1.Location = new System.Drawing.Point(350, 91);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 23);
+            this.textBox1.Size = new System.Drawing.Size(119, 23);
             this.textBox1.TabIndex = 31;
             // 
             // dataGridView1
@@ -124,6 +124,7 @@
             this.button1.Size = new System.Drawing.Size(43, 40);
             this.button1.TabIndex = 36;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -257,11 +258,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(268, 16);
+            this.label6.Location = new System.Drawing.Point(221, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 25);
+            this.label6.Size = new System.Drawing.Size(190, 25);
             this.label6.TabIndex = 48;
-            this.label6.Text = "Historial";
+            this.label6.Text = "Historial de prestamos";
             // 
             // button4
             // 
