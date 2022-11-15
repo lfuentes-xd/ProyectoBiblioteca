@@ -17,13 +17,13 @@ namespace libreria
         SqlDB con = new SqlDB();
         private CurrencyManager CM;
         List<Prestamo> libros = new List<Prestamo>();
-        List<Claselibro> libro = new List<Claselibro>();
+       //List<Claselibro> libro = new List<Claselibro>();
         public menuPrestamo()
         {
             InitializeComponent();
             panel2.Visible = true;
             dataGridView1.DataSource = CargarDatos();
-            data2.DataSource = CargarDatos2(); 
+            //data2.DataSource = CargarDatos2(); 
             CM = (CurrencyManager)dataGridView1.BindingContext[libros];
         }
 
@@ -70,56 +70,13 @@ namespace libreria
 
         }
 
-        //para llenar la tabla libros
-        private List<Claselibro> CargarDatos2(string query = "")
-        {
-            string sql = (query == "")
-                ? "SELECT ISBN, Titulo FROM libros"
-                : query;
-            SqlConnection connection = con.ObtenerConexion();
-            connection.Open();
-            try
-            {
-                //para ejecutar consultas
-                SqlCommand sqlcom = new SqlCommand(sql, connection);
-                //para leer la tabla 
-                SqlDataReader lector = sqlcom.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Claselibro lib = new Claselibro()
-                    {
-
-                        isbn = Int64.Parse(lector[0].ToString()),
-                        Titulo = lector[1].ToString(),
-                        
-                    };
-                    libro.Add(lib);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(
-                "Error inesperado" + e.Message,
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return libro;
-
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             MenuLateral menuLateral = new MenuLateral();
             this.Close();
             menuLateral.Show();
-            
+
         }
 
         private void menuPrestamo_Load(object sender, EventArgs e)
@@ -129,14 +86,14 @@ namespace libreria
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MenuLateral MenuLateral = new MenuLateral();    
+            MenuLateral MenuLateral = new MenuLateral();
             MenuLateral.Show();
             this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
         Boolean val = false;
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -146,7 +103,7 @@ namespace libreria
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(val == true)
+            if (val == true)
             {
                 this.Location = Cursor.Position;
             }
@@ -154,7 +111,7 @@ namespace libreria
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
-            val=false;
+            val = false;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -220,7 +177,7 @@ namespace libreria
                 string busca = textBox1.Text;
 
                 string sql = $"SELECT * FROM Prestamo Where" +
-                $"(NoPrestamo LIKE '%{busca}%')";
+                $"(ISBN LIKE '%{busca}%')";
 
                 libros.Clear();
                 dataGridView1.DataSource = CargarDatos(sql);
@@ -234,7 +191,7 @@ namespace libreria
             textBox4.Text = pres.noPrestamo.ToString();
             textBox1.Text = pres.isbn.ToString();
             textBox2.Text = pres.noLector.ToString();
-            textBox3.Text = pres.Fecha.ToString(); 
+            textBox3.Text = pres.Fecha.ToString();
         }
         //limpiar
         private void button8_Click(object sender, EventArgs e)
@@ -253,6 +210,201 @@ namespace libreria
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        void limpiar()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+        }
+
+        //boton para insertar
+        private void insertar_Click(object sender, EventArgs e)
+        {
+            int noPrestamo = int.Parse(textBox4.Text);
+            int noLector = int.Parse(textBox2.Text);
+            Int64 ISBN = Int64.Parse(textBox1.Text);
+            string fech = textBox3.Text;
+            DateTime dateAndTime = DateTime.Now;
+            String fecha = dateAndTime.ToString("yyyy/MM/dd");
+
+
+            string sql = $"INSERT INTO Prestamo (NoPrestamo,NoLector,ISBN,FechaEntrega) "
+                +$"VALUES ('{noPrestamo}','{noLector}','{ISBN}',{dateAndTime})";
+
+            SqlConnection connection = con.ObtenerConexion();
+            connection.Open();
+
+            try
+            {
+                SqlCommand sqlcom = new SqlCommand(sql, connection);
+                sqlcom.ExecuteNonQuery();
+
+                MessageBox.Show("Dato Registrado con exito",
+                    "exito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information); 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error en el registro : " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
+            finally {
+                connection.Close();
+                limpiar(); 
+                libros.Clear();
+                dataGridView1.DataSource = CargarDatos();
+                CM.Refresh(); 
+            }
+        }
+        //boton poara actualizar
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = con.ObtenerConexion();
+            connection.Open();
+            try
+            {
+                DateTime dateAndTime = DateTime.Now;
+                
+                String fecha = dateAndTime.ToString("yyyy/MM/dd");
+                String sql = "UPDATE Prestamo SET FechaEntrega = '" + fecha + "' WHERE NoPrestamo = " + textBox4.Text + " AND NoLector = " + textBox2.Text + " AND ISBN = " + textBox1.Text;
+
+                SqlCommand sqlcom = new SqlCommand(sql, connection);
+                sqlcom.ExecuteNonQuery(); 
+
+                MessageBox.Show(
+                    "dato modificado con exito",
+                    "Exito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                  );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                "Error en el registro: " + ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                connection.Close();
+                libros.Clear();
+                dataGridView1.DataSource = CargarDatos();
+                CM.Refresh();
+
+            }
+        }
+        //boton para eliminar
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //buscar ISBN
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == " ")
+            {
+                MessageBox.Show("neceistar meter un ISBN"); 
+            }
+            else
+            {
+                
+                string busca = textBox1.Text;
+                string sql = $"SELECT * FROM Libros Where" +
+                $"(ISBN = '{busca}')";
+
+                SqlConnection connection = con.ObtenerConexion();
+                connection.Open();
+
+                try
+                {
+                    //para ejecutar consultas
+                    SqlCommand sqlcom = new SqlCommand(sql, connection);
+                    //para leer la tabla 
+                    SqlDataReader lector = sqlcom.ExecuteReader();
+
+                    if (lector.Read())
+                    {
+                        MessageBox.Show("se encontro el libro buscado");
+                        textBox2.Enabled = true;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("sucedio un error en la busqueda: "+ex); 
+                }
+                finally
+                {
+                    connection.Close(); 
+                }
+                
+            }
+
+        }
+
+        
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text == " ")
+            {
+                MessageBox.Show("neceistar meter un ISBN");
+            }
+            else
+            {
+
+                string busca = textBox2.Text;
+                string sql = $"SELECT * FROM Lector Where" +
+                $"(NoLector = '{busca}')";
+
+                SqlConnection connection = con.ObtenerConexion();
+                connection.Open();
+
+                try
+                {
+                    //para ejecutar consultas
+                    SqlCommand sqlcom = new SqlCommand(sql, connection);
+                    //para leer la tabla 
+                    SqlDataReader lector = sqlcom.ExecuteReader();
+
+                    if (lector.Read())
+                    {
+                        MessageBox.Show("se encontro el usuario buscado");
+                        insertar.Enabled = true;
+                        Random r = new Random();
+                        int nolec = r.Next(0,4);
+                        DateTime dateAndTime = DateTime.Now;
+                        String fecha = dateAndTime.ToString("yyyy/MM/dd");
+
+                        textBox4.Text = nolec.ToString();
+                        textBox3.Text = fecha; 
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("sucedio un error en la busqueda: " + ex);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
         }
     }
 }
