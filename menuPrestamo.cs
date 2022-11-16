@@ -31,7 +31,7 @@ namespace libreria
         private List<Prestamo> CargarDatos(string query = "")
         {
             string sql = (query == "")
-                ? "SELECT * FROM Prestamo"
+                ? "SELECT * FROM Prestamo WHERE FechaEntrega IS NULL"
                 : query;
             SqlConnection connection = con.ObtenerConexion();
             connection.Open();
@@ -164,9 +164,9 @@ namespace libreria
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == " ")
+            if (textBox1.Text == "")
             {
-                string sql = $"SELECT * FROM Prestamo ";
+                string sql = $"SELECT * FROM Prestamo WHERE FechaEntrega IS NULL ORDER BY FechaEntrega DESC";
 
                 libros.Clear();
                 dataGridView1.DataSource = CargarDatos(sql);
@@ -178,7 +178,6 @@ namespace libreria
 
                 string sql = $"SELECT * FROM Prestamo Where" +
                 $"(ISBN LIKE '%{busca}%')";
-
                 libros.Clear();
                 dataGridView1.DataSource = CargarDatos(sql);
                 CM.Refresh();
@@ -230,9 +229,8 @@ namespace libreria
             DateTime dateAndTime = DateTime.Now;
             String fecha = dateAndTime.ToString("yyyy/MM/dd");
 
-
             string sql = $"INSERT INTO Prestamo (NoPrestamo,NoLector,ISBN,FechaEntrega) "
-                +$"VALUES ('{noPrestamo}','{noLector}','{ISBN}',{dateAndTime})";
+                +$"VALUES ('{noPrestamo}','{noLector}','{ISBN}', NULL)";
 
             SqlConnection connection = con.ObtenerConexion();
             connection.Open();
@@ -385,7 +383,7 @@ namespace libreria
                         MessageBox.Show("se encontro el usuario buscado");
                         insertar.Enabled = true;
                         Random r = new Random();
-                        int nolec = r.Next(0,4);
+                        int nolec = r.Next(0,999);
                         DateTime dateAndTime = DateTime.Now;
                         String fecha = dateAndTime.ToString("yyyy/MM/dd");
 

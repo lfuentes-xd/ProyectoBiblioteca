@@ -376,6 +376,7 @@
             this.Name = "menuHistorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menuHistorial";
+            this.Load += new System.EventHandler(this.menuHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

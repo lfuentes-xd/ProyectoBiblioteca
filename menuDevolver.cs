@@ -191,7 +191,14 @@ namespace libreria
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Insertar(textBox1.Text, textBox3.Text, textBox4.Text);
+            if (textBox1.Text.IsNullOrEmpty() || textBox2.Text.IsNullOrEmpty() || textBox3.Text.IsNullOrEmpty() || textBox4.Text.IsNullOrEmpty())
+            { 
+                MessageBox.Show("Complete la información faltante"); 
+            }
+            else {
+                Insertar(textBox1.Text, textBox3.Text, textBox4.Text);
+            }
+            
         }
 
         private void Insertar(string ISBN, string NoPrestamo, string NoLector)
@@ -218,8 +225,20 @@ namespace libreria
             finally
             {
                 connection.Close();
+                Limpiar();
             }
             
+        }
+
+        private void Limpiar()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            prestamos.Clear();
+            dataGridView1.DataSource = CargarDatos();
+            CM.Refresh();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
